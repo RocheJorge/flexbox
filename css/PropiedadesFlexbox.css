@@ -1,0 +1,164 @@
+/* 
+Flexbox CSS es un sistema de maquetación unidimensional, pensado principalmente para el acomodo interno de los elementos, componentes y/o widgets de una interfaz de usuario.
+https://jonmircha.com/flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/**************************
+Propiedades del contenedor padre (Flex Container)
+**************************/
+
+.container {
+    background-color: #333;
+    height: 30vh;
+
+    /* 
+    display: Define que una caja será flexbox de bloque o flexbox de línea.
+    */
+    /* 
+    flex es una caja flexible que trabaja como bloque 
+    */
+    /* 
+    solo ocupara el ancho del contenido con inline-flex 
+    */
+    /* 
+    display: flex | inline-flex; 
+    */
+    display: flex;
+
+    /* 
+    flex-direction: Define el eje principal (main axis) row - X, column - Y. */
+    /* 
+    flex-direction: row-> default | row-reverse | column | column-reverse; 
+    */
+    flex-direction: row;
+
+    /* 
+    flex-wrap: Define si la caja flexbox envuelve o NO a sus hijos. 
+    */
+    /* 
+    flex-wrap: nowrap-> default | wrap | wrap-reverse; 
+    */
+    flex-wrap: nowrap;
+
+    /* 
+    flex-flow: Es un shorthand de flex-direction y flex-wrap. 
+    */
+    /* 
+    flex-flow: flex-direction flex-wrap; 
+    */
+    flex-flow: row nowrap;
+
+    /* 
+    justify-content: Define la alineación de los hijos en el eje principal (main axis). 
+    */
+    /* 
+    justify-content: flex-start-> default | center | flex-end | space-between | space-around | space-evenly; 
+    */
+    justify-content: flex-start;
+
+    /* 
+    align-items: Define la alineación de los hijos en el eje transversal (cross axis), dentro de cada línea. 
+    */
+    /* 
+    align-items: stretch-> default | flex-start | flex-end | center | baseline; 
+    */
+    align-items: stretch;
+
+    /* 
+    align-content: Define la alineación de los hijos en el eje transversal (cross axis), NO funciona cuando los hijos están en UNA sóla línea (es decir cuando flex-wrap tiene el valor de nowrap, NO FUNCIONA) 
+    */
+    /* 
+    align-content: flex-start-> default | flex-end | center | space-between | space-around | space-evenly | stretch; 
+    */
+    align-content: flex-start;
+}
+
+/*
+ OJO: Si es fila (row) le va a hacer caso al ancho (width) y si es columna (column) le a hacer caso al alto (height) 
+*/
+
+/* 
+OJO: Cuando queramos usar el valor de stretch que significa estirar en el corss axis se tienen que dar cuenta que dependiendo del eje,fila,columna los elementos hijos no tengan propiedades de ancho y alto 
+*/
+
+/**************************
+Propiedades de los elementos hijos (Flex Items)
+**************************/
+
+.item {
+    border: medium solid #999;
+    /* width: 20%; */
+    /* height: 20%; */
+    background-color: #666;
+    
+    /* 
+    flex-grow: Cuando la caja flexbox tenga espacio sobrante, es la habilidad o el factor de crecer, valor por defecto es 0, NO se aceptan valores negativos.
+    */
+    /* 
+    flex-grow: 0-> default | 1 (aumenta 1) | 2 (aumenta el doble) | 3 (aumenta el triple) | etc;
+    */
+    flex-grow: 0;
+
+    /* 
+    flex-shrink: Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el factor de encogerse, valor por defecto es 1, NO se aceptan valores negativos.
+    */
+    /* 
+    flex-shrink: 1 (reduce 10px)-> default | 2 (reduce 30px) | 3 (reduce 30px);
+    */
+    flex-shrink: 1;
+
+    /* 
+    flex-basis: Es el tamaño del elemento hijo dentro de la línea de la caja flexbox.
+
+        - Si la caja flexbox tiene dirección de fila, flex-basis representa el width.
+        - Si la caja flexbox tiene dirección de columna, flex-basis representa el height.
+        - Valor por defecto auto
+    */
+    /* 
+    flex-basis: auto-> default | 100px | 2rem | 50% | etc...;
+    */
+    flex-basis: auto;
+
+    /* 
+    flex: Es un shorthand de las propiedades flex-grow, flex-shrink y flex-basis, en ese orden.
+    */
+    /* 
+    flex: flex-grow | flex-shrink | flex-basis
+    */
+    flex: 0 1 auto;
+
+    /* 
+    order: Representa el orden que tendrán los elementos hijos en la caja flexbox.
+
+        - Valor por defecto 0.
+        - Se aceptan valores positivos y negativos.
+        - Un valor menor siempre irá antes que un valor mayor.
+    */
+    /* 
+    order: 0-> default | 1 | 2 | -3 | etc...;
+    */
+    order: 0;
+
+    /* 
+    align-self: Sobreescribe el valor de la propiedad align-items sólo para el elemento hijo especificado.
+    */
+    /* 
+    align-self: stretch | flex-start | flex-end | center | baseline;
+    */
+    align-self: stretch;
+}
+
+.item:nth-child(2) {
+    /* flex-grow: 2; */
+    /* flex-shrink: 1; */
+    /* flex: 0 1 auto; */
+    /* order: 0; */
+    align-self: flex-start;
+}
