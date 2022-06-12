@@ -7,7 +7,7 @@ _Documentacion de Flexbox_
 _Herramientas Usadas:_
 
 - [VS CODE](https://code.visualstudio.com/) - Visual Studio Code
-- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Python Como Lenguaje de Programacion
+- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Flexbox
 
 ## Autores ✒️
 
