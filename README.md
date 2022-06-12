@@ -7,7 +7,12 @@ _Documentacion de Flexbox_
 _Herramientas Usadas:_
 
 - [VS CODE](https://code.visualstudio.com/) - Visual Studio Code
-- [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Flexbox
+
+## Referencias ✒️
+
+- [Tricks Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Flexbox Reference](https://cssreference.io/flexbox/)
+- [Guia Flexbox](https://jonmircha.com/flexbox)
 
 ## Autores ✒️
 
